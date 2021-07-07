@@ -16,7 +16,7 @@ function computerPlay() {
 
 function playRound() {
     computerSelection = computerPlay();
-    playerSelection = prompt("Please choose: Rock, Paper or Scissor:").toLowerCase();
+    playerSelection = prompt("Please choose: Rock, Paper or Scissors:").toLowerCase();
     //while ((playerSelection !== "rock") || (playerSelection !== "paper") || (playerSelection !== "scissors")) {
         //alert("Wrong input, please try again!");
         //playerSelection = prompt("Please choose: Rock, Paper or Scissor:").toLowerCase();
