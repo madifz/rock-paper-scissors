@@ -4,14 +4,14 @@ This is a project assignment for The Odin Project.
 
 Requirements for assignment are provided below:
 
-[ ] Create a new Git repo.
-[ ] Create blank HTML document with script tag.
-[ ] Game is to be played against a computer with a function computerPlay.
-[ ] Function computerPlay will randomly return 'Rock', 'Paper' or 'Scissors'.
+[x] Create a new Git repo.
+[x] Create blank HTML document with script tag.
+[x] Game is to be played against a computer with a function computerPlay.
+[x] Function computerPlay will randomly return 'Rock', 'Paper' or 'Scissors'.
 [ ] Create a function playRound() that plays a single round of RPS by taking two parameters (playerSelection and computerSelection);
     and returns a string that declares the winner of the round e.g. "You Lose! Paper beats Rock".
 [ ] Make sure playerSelection parameter is case-insensitive.
-[ ] Fuction should only return results and not console.log().
+[ ] Function should only return results and not console.log().
 [ ] Write a NEW function called game(). 
     [ ] Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end. 
     [ ] Use console.log() to display the results of each round and the winner at the end.
