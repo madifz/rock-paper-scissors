@@ -8,11 +8,11 @@ Requirements for assignment are provided below:
 [x] Create blank HTML document with script tag.
 [x] Game is to be played against a computer with a function computerPlay.
 [x] Function computerPlay will randomly return 'Rock', 'Paper' or 'Scissors'.
-[ ] Create a function playRound() that plays a single round of RPS by taking two parameters (playerSelection and computerSelection);
+[x] Create a function playRound() that plays a single round of RPS by taking two parameters (playerSelection and computerSelection);
     and returns a string that declares the winner of the round e.g. "You Lose! Paper beats Rock".
-[ ] Make sure playerSelection parameter is case-insensitive.
-[ ] Function should only return results and not console.log().
-[ ] Write a NEW function called game(). 
-    [ ] Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end. 
-    [ ] Use console.log() to display the results of each round and the winner at the end.
-    [ ] Use prompt() to get input from the user.
+[x] Make sure playerSelection parameter is case-insensitive.
+[x] Function should only return results and not console.log().
+[x] Write a NEW function called game(). 
+[x] Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end. 
+[x] Use console.log() to display the results of each round and the winner at the end.
+[x] Use prompt() to get input from the user.
