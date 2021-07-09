@@ -1,7 +1,28 @@
+const container = document.querySelector('#container');
+
+const contentResult = document.createElement('div');
+contentResult.classList.add('contentResult');
+
+const btnRock = document.querySelector('#btnRock')
+btnRock.addEventListener('click', ()=> {
+    playRound("rock");
+})
+
+const btnPaper = document.querySelector('#btnPaper')
+btnPaper.addEventListener('click', ()=> {
+    playRound("paper");
+})
+
+const btnScissors = document.querySelector('#btnScissors')
+btnScissors.addEventListener('click', ()=> {
+    playRound("scissors");
+})
+
 let computerSelection = "";
 let playerSelection = "";
-
-game();
+let playerWins = 0;
+let computerWins = 0;
+//game();
 
 function computerPlay() {
     let compStr = "";
@@ -14,9 +35,10 @@ function computerPlay() {
     return compStr;
 }
 
-function playRound() {
+function playRound(btnInput) {
     computerSelection = computerPlay();
-    playerSelection = prompt("Please choose: Rock, Paper or Scissors:").toLowerCase();
+    playerSelection = btnInput;
+    //playerSelection = prompt("Please choose: Rock, Paper or Scissors:").toLowerCase();
     //while ((playerSelection !== "rock") || (playerSelection !== "paper") || (playerSelection !== "scissors")) {
         //alert("Wrong input, please try again!");
         //playerSelection = prompt("Please choose: Rock, Paper or Scissor:").toLowerCase();
@@ -26,11 +48,34 @@ function playRound() {
     playerSelection === "paper" && computerSelection === "paper" || 
     playerSelection === "scissors" && computerSelection === "scissors") {
         console.log(`It's a draw! You and the computer chose ${playerSelection}!`);
+        contentResult.textContent = `It's a draw! You and the computer chose ${playerSelection}!`;
+        container.appendChild(contentResult);
     } else if (playerSelection === "rock" && computerSelection === "scissors" ||
     playerSelection === "paper" && computerSelection === "rock" || 
     playerSelection === "scissors" && computerSelection === "paper") {
-        return console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
-    } else console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
+        console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+        playerWins += 1;
+        document.getElementById("playerW").innerHTML = playerWins;
+        contentResult.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
+        container.appendChild(contentResult);
+        fiveRoundWinner();
+    } else {
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
+        computerWins += 1;
+        document.getElementById("computerW").innerHTML = computerWins;
+        contentResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}!`;
+        container.appendChild(contentResult);
+        fiveRoundWinner();
+    }
+
+}
+
+function fiveRoundWinner() {
+    if(playerWins === 5) {
+        alert("You are the first to 5 round wins, you win the game!")
+    } else if (computerWins === 5) {
+        alert("Computer was the first to 5 round wins, you lose the game!")
+    }
 }
 
 function game() {
